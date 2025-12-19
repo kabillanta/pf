@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc; /* slate-50 */
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #f8fafc; /* slate-900, optional but consistent */
+    --foreground: #e5e7eb;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hover state */
+.custom-cursor.hover {
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.particles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  animation: float 20s linear infinite;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-10vh);
+  }
+}
